@@ -83,5 +83,24 @@ int main(){
         diff += abs(leftsorted[i]-rightsorted[i]);
     }
     printf("the difference is %d ", diff);
+
+
+    int rocurrences = 0;
+    int sim_score = 0;
+    for (int i = 0; i < 1000; i++){
+        for (int j = 0; j < 1000; j++){
+            if (leftsorted[i] == rightsorted[j]){
+                rocurrences++;
+            }
+            if (leftsorted[i] < rightsorted[j]){
+                break;
+            }
+        }
+        sim_score += leftsorted[i]*rocurrences;
+        rocurrences = 0;
+    }
+    
+
+    printf("the similirity score was %d ", sim_score);
 }
 
